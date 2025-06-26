@@ -1,0 +1,355 @@
+/* TKM Door Templates - Additional Styles */
+
+/* Ensure primary color consistency */
+:root {
+    --tkm-primary: #00954b;
+    --tkm-primary-light: #10b981;
+    --tkm-primary-dark: #047857;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+    .tkm-dashboard-content,
+    .tkm-archive-content {
+        margin-left: 0;
+        padding: 0.5rem;
+    }
+    
+    .tkm-dashboard-header,
+    .tkm-page-header {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .tkm-welcome-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .tkm-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .tkm-stat-card {
+        padding: 1rem;
+    }
+    
+    .tkm-stat-value {
+        font-size: 1.5rem;
+    }
+    
+    .tkm-content-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .tkm-quick-actions,
+    .tkm-recent-section,
+    .tkm-filters-section,
+    .tkm-tasks-section {
+        padding: 1rem;
+    }
+    
+    .tkm-action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tkm-filters-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .tkm-task-card {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .tkm-task-image {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+    }
+    
+    .tkm-task-header {
+        width: 100%;
+    }
+    
+    .tkm-task-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tkm-task-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .tkm-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .tkm-action-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tkm-user-info h1 {
+        font-size: 1.5rem;
+    }
+    
+    .tkm-page-title {
+        font-size: 1.5rem;
+    }
+    
+    .tkm-stat-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .tkm-task-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Improved accessibility */
+.tkm-action-btn:focus,
+.tkm-filter-select:focus {
+    outline: 2px solid var(--tkm-primary);
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.tkm-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.tkm-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: tkm-loading 1.5s infinite;
+}
+
+@keyframes tkm-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Loading states and animations */
+.tkm-filter-loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    z-index: 1000;
+    font-size: 0.875rem;
+}
+
+.tkm-loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: tkm-spin 1s linear infinite;
+}
+
+@keyframes tkm-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tkm-start-btn.processing {
+    background: #9ca3af !important;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.tkm-fallback-image {
+    opacity: 0.7;
+}
+
+/* Enhanced hover effects */
+.tkm-task-card:hover {
+    background: #f9fafb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.tkm-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Better spacing for small content */
+.tkm-no-data,
+.tkm-no-tasks {
+    padding: 2rem 1rem;
+}
+
+/* Improved button states */
+.tkm-action-btn:active {
+    transform: translateY(0);
+}
+
+/* Better category colors */
+.tkm-task-category {
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+}
+
+/* Enhanced status badges */
+.tkm-status-badge,
+.tkm-difficulty-badge {
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    border: 1px solid transparent;
+}
+
+.tkm-status-approved {
+    border-color: #16a34a;
+}
+
+.tkm-status-pending {
+    border-color: #d97706;
+}
+
+.tkm-status-rejected {
+    border-color: #dc2626;
+}
+
+/* Better progress bar styling */
+.tkm-progress-fill {
+    background: linear-gradient(90deg, var(--tkm-primary) 0%, var(--tkm-primary-light) 100%);
+}
+
+/* Start Task Button */
+.tkm-start-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--tkm-primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.tkm-start-btn:hover {
+    background: var(--tkm-primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 149, 75, 0.3);
+    color: white;
+    text-decoration: none;
+}
+
+.tkm-start-btn:active {
+    transform: translateY(0);
+}
+
+/* Task Card Link Styling */
+.tkm-task-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tkm-task-link:hover {
+    color: var(--tkm-primary);
+    text-decoration: none;
+}
+
+.tkm-task-card {
+    transition: all 0.2s ease;
+    border-radius: 8px;
+}
+
+.tkm-task-card:hover {
+    background: #f9fafb;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* Task Description */
+.tkm-task-description {
+    color: #6b7280;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Better task image handling */
+.tkm-task-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* SVG placeholder styling */
+.tkm-task-image svg {
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+}
+
+/* Mobile improvements for Start button */
+@media (max-width: 768px) {
+    .tkm-start-btn {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+    }
+    
+    .tkm-task-actions {
+        align-items: flex-end;
+    }
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+    .tkm-task-card {
+        -webkit-tap-highlight-color: rgba(0, 149, 75, 0.1);
+    }
+    
+    .tkm-start-btn {
+        min-height: 44px; /* Better touch target */
+    }
+}
+
+/* Improved sidebar responsiveness */
+@media (max-width: 768px) {
+    .tk-sidebar-nav {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .tk-sidebar-nav.active {
+        transform: translateX(0);
+    }
+}

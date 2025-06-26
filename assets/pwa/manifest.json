@@ -1,0 +1,85 @@
+{
+  "name": "Indoor Tasks",
+  "short_name": "IndoorTasks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00954b",
+  "description": "Complete tasks, earn points, and withdraw with KYC. PWA for Indoor Tasks.",
+  "orientation": "portrait",
+  "scope": "/",
+  "gcm_sender_id": "482941778795",
+  "icons": [
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your Dashboard",
+      "url": "/dashboard/",
+      "icons": [{ "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Tasks",
+      "short_name": "Tasks",
+      "description": "Browse available tasks",
+      "url": "/tasks/",
+      "icons": [{ "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Wallet",
+      "short_name": "Wallet",
+      "description": "View your wallet",
+      "url": "/wallet/",
+      "icons": [{ "src": "/wp-content/plugins/indoor-tasks/assets/image/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

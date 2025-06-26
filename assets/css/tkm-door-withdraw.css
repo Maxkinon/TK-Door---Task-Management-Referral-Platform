@@ -1,0 +1,516 @@
+/* TKM Door Withdraw Styles */
+/* Modern, clean design consistent with the primary color #00954b */
+
+* {
+    box-sizing: border-box;
+}
+
+body.tkm-door-withdraw {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.tkm-withdraw-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.tkm-withdraw-content {
+    flex: 1;
+    padding: 0;
+    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Header Section */
+.tkm-withdraw-header {
+    background: linear-gradient(135deg, #00954b 0%, #00a855 100%);
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.tkm-header-content h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.tkm-header-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.tkm-balance-display {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    min-width: 200px;
+}
+
+.tkm-balance-label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.tkm-balance-amount {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.tkm-balance-equivalent {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* Messages */
+.tkm-message {
+    margin: 0 3rem 2rem 3rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tkm-message-success {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.tkm-message-error {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.tkm-message-icon {
+    font-size: 1.2rem;
+}
+
+.tkm-message-text {
+    flex: 1;
+}
+
+/* Requirements Section */
+.tkm-requirements-section {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-requirements-section h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.tkm-requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.tkm-requirement-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-left: 4px solid transparent;
+}
+
+.tkm-requirement-item.met {
+    border-left-color: #28a745;
+}
+
+.tkm-requirement-item.not-met {
+    border-left-color: #dc3545;
+    background: #fff5f5;
+}
+
+.tkm-requirement-icon {
+    font-size: 1.5rem;
+    margin-top: 0.25rem;
+}
+
+.tkm-requirement-text {
+    flex: 1;
+}
+
+.tkm-requirement-text strong {
+    color: #2c3e50;
+}
+
+.tkm-requirement-text small {
+    display: block;
+    color: #6c757d;
+    margin-top: 0.25rem;
+}
+
+/* Withdrawal Form Section */
+.tkm-withdrawal-form-section {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-withdrawal-form-section h3 {
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.tkm-withdrawal-form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 149, 75, 0.1);
+    border: 1px solid rgba(0, 149, 75, 0.1);
+    max-width: 600px;
+}
+
+.tkm-form-group {
+    margin-bottom: 2rem;
+}
+
+.tkm-form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1rem;
+}
+
+.tkm-input,
+.tkm-select,
+.tkm-textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.tkm-input:focus,
+.tkm-select:focus,
+.tkm-textarea:focus {
+    outline: none;
+    border-color: #00954b;
+    box-shadow: 0 0 0 3px rgba(0, 149, 75, 0.1);
+}
+
+.tkm-input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tkm-input-group .tkm-input {
+    padding-right: 80px;
+}
+
+.tkm-input-suffix {
+    position: absolute;
+    right: 1rem;
+    color: #6c757d;
+    font-weight: 500;
+    pointer-events: none;
+}
+
+.tkm-conversion-display {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #00954b;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.tkm-field-help {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.tkm-form-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+/* Buttons */
+.tkm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 160px;
+    justify-content: center;
+}
+
+.tkm-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.tkm-btn-primary {
+    background: linear-gradient(135deg, #00954b 0%, #00a855 100%);
+    color: white;
+}
+
+.tkm-btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 149, 75, 0.3);
+}
+
+.tkm-btn-secondary {
+    background: white;
+    color: #00954b;
+    border: 2px solid #00954b;
+}
+
+.tkm-btn-secondary:hover {
+    background: #00954b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tkm-btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Requirements Not Met */
+.tkm-requirements-not-met {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6c757d;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tkm-empty-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.tkm-empty-state h4 {
+    margin: 0 0 1rem 0;
+    color: #495057;
+    font-size: 1.5rem;
+}
+
+.tkm-empty-state p {
+    margin: 0 0 1rem 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tkm-empty-state p:last-of-type {
+    margin-bottom: 2rem;
+}
+
+/* Information Section */
+.tkm-info-section {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-info-section h3 {
+    margin: 0 0 2rem 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.tkm-info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tkm-info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.tkm-info-icon {
+    font-size: 2rem;
+    margin-top: 0.25rem;
+}
+
+.tkm-info-content h4 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+    font-size: 1.1rem;
+}
+
+.tkm-info-content p {
+    margin: 0;
+    color: #6c757d;
+    line-height: 1.5;
+}
+
+/* Loading Overlay */
+.tkm-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: white;
+}
+
+.tkm-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tkm-withdraw-content {
+        margin-left: 0;
+        padding-top: 70px;
+    }
+    
+    .tkm-withdraw-header,
+    .tkm-requirements-section,
+    .tkm-withdrawal-form-section,
+    .tkm-requirements-not-met,
+    .tkm-info-section {
+        padding: 0 1rem;
+    }
+    
+    .tkm-withdraw-header {
+        padding: 1.5rem 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+    
+    .tkm-balance-display {
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .tkm-withdrawal-form {
+        padding: 1.5rem;
+    }
+    
+    .tkm-message {
+        margin: 0 1rem 2rem 1rem;
+        padding: 1rem;
+    }
+    
+    .tkm-requirements-grid,
+    .tkm-info-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .tkm-form-actions {
+        flex-direction: column;
+    }
+    
+    .tkm-btn {
+        width: 100%;
+    }
+    
+    .tkm-header-content h1 {
+        font-size: 2rem;
+    }
+    
+    .tkm-balance-amount {
+        font-size: 1.5rem;
+    }
+    
+    .tkm-info-card {
+        padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .tkm-info-icon {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tkm-header-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .tkm-balance-amount {
+        font-size: 1.3rem;
+    }
+    
+    .tkm-withdrawal-form {
+        padding: 1rem;
+    }
+    
+    .tkm-requirement-item,
+    .tkm-info-card {
+        padding: 1rem;
+    }
+}

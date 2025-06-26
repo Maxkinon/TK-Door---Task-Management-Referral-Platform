@@ -1,0 +1,535 @@
+/* TKM Door Wallet Styles */
+/* Modern, clean design consistent with the primary color #00954b */
+
+* {
+    box-sizing: border-box;
+}
+
+body.tkm-door-wallet {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+.tkm-wallet-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.tkm-wallet-content {
+    flex: 1;
+    padding: 0;
+    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Header Section */
+.tkm-wallet-header {
+    background: linear-gradient(135deg, #00954b 0%, #00a855 100%);
+    color: white;
+    padding: 2rem 3rem;
+    border-radius: 0 0 20px 20px;
+    margin-bottom: 2rem;
+}
+
+.tkm-header-content h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.tkm-header-subtitle {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Balance Section */
+.tkm-balance-section {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-balance-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 40px rgba(0, 149, 75, 0.1);
+    border: 1px solid rgba(0, 149, 75, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.tkm-balance-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #00954b 0%, #00a855 100%);
+}
+
+.tkm-balance-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.tkm-balance-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.tkm-balance-icon {
+    font-size: 2rem;
+    opacity: 0.8;
+}
+
+.tkm-balance-amount {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.tkm-points {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00954b;
+    display: block;
+}
+
+.tkm-points-label {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-left: 0.5rem;
+}
+
+.tkm-balance-equivalent {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+.tkm-balance-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.tkm-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.tkm-btn-primary {
+    background: linear-gradient(135deg, #00954b 0%, #00a855 100%);
+    color: white;
+}
+
+.tkm-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 149, 75, 0.3);
+}
+
+.tkm-btn-secondary {
+    background: white;
+    color: #00954b;
+    border: 2px solid #00954b;
+}
+
+.tkm-btn-secondary:hover {
+    background: #00954b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tkm-btn-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Transactions Section */
+.tkm-transactions-section {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tkm-section-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.tkm-filter-tabs {
+    display: flex;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tkm-tab {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.tkm-tab.active,
+.tkm-tab:hover {
+    background: #00954b;
+    color: white;
+}
+
+/* Transactions Table */
+.tkm-transactions-table {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tkm-table-header {
+    display: grid;
+    grid-template-columns: 140px 120px 1fr 120px 100px;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 1px solid #dee2e6;
+    font-size: 0.9rem;
+}
+
+.tkm-transaction-row {
+    display: grid;
+    grid-template-columns: 140px 120px 1fr 120px 100px;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #f1f3f4;
+    transition: background-color 0.3s ease;
+    align-items: center;
+}
+
+.tkm-transaction-row:hover {
+    background: #f8f9fa;
+}
+
+.tkm-transaction-row:last-child {
+    border-bottom: none;
+}
+
+.tkm-transaction-date {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.tkm-transaction-time {
+    display: block;
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-weight: normal;
+}
+
+.tkm-transaction-type {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tkm-transaction-type span {
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.tkm-transaction-description {
+    color: #495057;
+}
+
+.tkm-transaction-points {
+    font-weight: 700;
+    text-align: right;
+}
+
+.tkm-transaction-points.positive {
+    color: #00954b;
+}
+
+.tkm-transaction-points.negative {
+    color: #dc3545;
+}
+
+.tkm-transaction-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.tkm-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #28a745;
+}
+
+/* Empty State */
+.tkm-empty-state {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: #6c757d;
+}
+
+.tkm-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.tkm-empty-state h4 {
+    margin: 0 0 0.5rem 0;
+    color: #495057;
+}
+
+.tkm-empty-state p {
+    margin: 0;
+}
+
+/* Withdrawals Section */
+.tkm-withdrawals-section {
+    padding: 0 3rem;
+    margin-bottom: 3rem;
+}
+
+.tkm-withdrawals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.tkm-withdrawal-card {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #00954b;
+}
+
+.tkm-withdrawal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.tkm-withdrawal-method {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.tkm-method-icon {
+    font-size: 1.2rem;
+}
+
+.tkm-withdrawal-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.tkm-withdrawal-status.pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.tkm-withdrawal-status.approved {
+    background: #d4edda;
+    color: #155724;
+}
+
+.tkm-withdrawal-status.rejected {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.tkm-withdrawal-amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00954b;
+    margin-bottom: 0.5rem;
+}
+
+.tkm-amount-equivalent {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: normal;
+}
+
+.tkm-withdrawal-date {
+    font-size: 0.85rem;
+    color: #6c757d;
+    line-height: 1.4;
+}
+
+.tkm-withdrawal-reason {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    border-left: 3px solid #ffc107;
+}
+
+/* Loading and Messages */
+.tkm-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    color: white;
+}
+
+.tkm-loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tkm-message-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tkm-wallet-content {
+        margin-left: 0;
+        padding-top: 70px;
+    }
+    
+    .tkm-wallet-header,
+    .tkm-transactions-section,
+    .tkm-withdrawals-section,
+    .tkm-balance-section {
+        padding: 0 1rem;
+    }
+    
+    .tkm-wallet-header {
+        padding: 1.5rem 1rem;
+    }
+    
+    .tkm-balance-card {
+        padding: 1.5rem;
+    }
+    
+    .tkm-table-header,
+    .tkm-transaction-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .tkm-table-header {
+        display: none;
+    }
+    
+    .tkm-transaction-row {
+        display: block;
+        border-left: 4px solid #00954b;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .tkm-transaction-date,
+    .tkm-transaction-type,
+    .tkm-transaction-description,
+    .tkm-transaction-points,
+    .tkm-transaction-status {
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .tkm-transaction-date::before { content: "Date: "; font-weight: 600; }
+    .tkm-transaction-type::before { content: "Type: "; font-weight: 600; }
+    .tkm-transaction-description::before { content: "Description: "; font-weight: 600; }
+    .tkm-transaction-points::before { content: "Points: "; font-weight: 600; }
+    .tkm-transaction-status::before { content: "Status: "; font-weight: 600; }
+    
+    .tkm-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .tkm-filter-tabs {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .tkm-balance-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .tkm-btn {
+        width: 100%;
+    }
+}

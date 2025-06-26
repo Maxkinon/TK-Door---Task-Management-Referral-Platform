@@ -1,0 +1,534 @@
+/**
+ * TKM Door Help Desk Styles
+ * Modern, responsive help desk and support center styling
+ * Version: 1.0.0
+ */
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Help Desk Body */
+body.tkm-door-helpdesk {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: #f8fafb;
+    color: #2c3e50;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Main Wrapper */
+.tkm-wrapper {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Main Content Area */
+.tkm-main-content {
+    flex: 1;
+    margin-left: 280px;
+    background-color: #ffffff;
+    transition: margin-left 0.3s ease;
+}
+
+.tkm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+/* Header Section */
+.tkm-header {
+    background: linear-gradient(135deg, #00954b 0%, #007a3d 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.tkm-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(30px, -30px);
+}
+
+.tkm-header-content {
+    position: relative;
+    z-index: 2;
+}
+
+.tkm-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+}
+
+.tkm-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Section Styles */
+.tkm-support-section,
+.tkm-faq-section {
+    margin-bottom: 50px;
+}
+
+.tkm-section-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tkm-icon {
+    font-size: 1.5rem;
+}
+
+.tkm-section-description {
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+/* Support Grid */
+.tkm-support-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+/* Support Cards */
+.tkm-support-card {
+    background: #ffffff;
+    border: 1px solid #e8ecef;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tkm-support-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: #00954b;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tkm-support-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 149, 75, 0.15);
+    border-color: #00954b;
+}
+
+.tkm-support-card:hover::before {
+    transform: scaleX(1);
+}
+
+.tkm-support-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: white;
+}
+
+.tkm-support-icon.telegram {
+    background: linear-gradient(135deg, #0088cc, #229ed9);
+}
+
+.tkm-support-icon.whatsapp {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.tkm-support-icon.telegram-channel {
+    background: linear-gradient(135deg, #0088cc, #229ed9);
+}
+
+.tkm-support-icon.whatsapp-channel {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.tkm-support-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.tkm-support-card p {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* Support Buttons */
+.tkm-support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: white;
+    cursor: pointer;
+}
+
+.telegram-btn {
+    background: linear-gradient(135deg, #0088cc, #229ed9);
+}
+
+.telegram-btn:hover {
+    background: linear-gradient(135deg, #007bb8, #1a8bc1);
+    transform: translateY(-2px);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #22c55e, #0f766e);
+    transform: translateY(-2px);
+}
+
+.telegram-channel-btn {
+    background: linear-gradient(135deg, #0088cc, #229ed9);
+}
+
+.telegram-channel-btn:hover {
+    background: linear-gradient(135deg, #007bb8, #1a8bc1);
+    transform: translateY(-2px);
+}
+
+.whatsapp-channel-btn {
+    background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.whatsapp-channel-btn:hover {
+    background: linear-gradient(135deg, #22c55e, #0f766e);
+    transform: translateY(-2px);
+}
+
+/* FAQ Section */
+.tkm-faq-container {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e8ecef;
+    overflow: hidden;
+}
+
+.tkm-faq-item {
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.tkm-faq-item:last-child {
+    border-bottom: none;
+}
+
+.tkm-faq-question {
+    width: 100%;
+    padding: 20px 25px;
+    background: none;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+}
+
+.tkm-faq-question:hover {
+    background-color: #f8fafb;
+    color: #00954b;
+}
+
+.tkm-faq-question.active {
+    background-color: #f0f9f4;
+    color: #00954b;
+}
+
+.tkm-faq-text {
+    flex: 1;
+    text-align: left;
+}
+
+.tkm-faq-arrow {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+    color: #7f8c8d;
+}
+
+.tkm-faq-question.active .tkm-faq-arrow {
+    transform: rotate(180deg);
+    color: #00954b;
+}
+
+.tkm-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.tkm-faq-answer.active {
+    max-height: 500px;
+}
+
+.tkm-faq-content {
+    padding: 0 25px 25px;
+    color: #5a6c7d;
+    line-height: 1.6;
+}
+
+.tkm-faq-content p {
+    margin-bottom: 15px;
+}
+
+.tkm-faq-content ul,
+.tkm-faq-content ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.tkm-faq-content li {
+    margin-bottom: 8px;
+}
+
+.tkm-faq-content strong {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+/* Additional Help Section */
+.tkm-additional-help {
+    margin-top: 50px;
+}
+
+.tkm-help-card {
+    background: linear-gradient(135deg, #f8fafb 0%, #e8f4f0 100%);
+    border: 1px solid #d1e7dd;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+}
+
+.tkm-help-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.tkm-help-card p {
+    color: #5a6c7d;
+    font-size: 1rem;
+    margin-bottom: 25px;
+}
+
+.tkm-help-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tkm-help-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: #00954b;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tkm-help-btn:hover {
+    background: #007a3d;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 149, 75, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tkm-main-content {
+        margin-left: 0;
+    }
+    
+    .tkm-container {
+        padding: 20px;
+    }
+    
+    .tkm-support-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .tkm-title {
+        font-size: 2rem;
+    }
+    
+    .tkm-subtitle {
+        font-size: 1rem;
+    }
+    
+    .tkm-header {
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .tkm-container {
+        padding: 15px;
+    }
+    
+    .tkm-support-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .tkm-support-card {
+        padding: 25px 20px;
+    }
+    
+    .tkm-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .tkm-faq-question {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    
+    .tkm-faq-content {
+        padding: 0 20px 20px;
+    }
+    
+    .tkm-help-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tkm-title {
+        font-size: 1.8rem;
+    }
+    
+    .tkm-support-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+    }
+    
+    .tkm-support-card h3 {
+        font-size: 1.2rem;
+    }
+    
+    .tkm-faq-question {
+        padding: 12px 15px;
+        font-size: 0.95rem;
+    }
+    
+    .tkm-faq-content {
+        padding: 0 15px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .tkm-help-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tkm-help-btn {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+/* Loading and Animation States */
+.tkm-loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.tkm-fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibility */
+.tkm-faq-question:focus,
+.tkm-support-btn:focus,
+.tkm-help-btn:focus {
+    outline: 2px solid #00954b;
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .tkm-wrapper {
+        display: block;
+    }
+    
+    .tkm-main-content {
+        margin-left: 0;
+    }
+    
+    .tkm-support-btn,
+    .tkm-help-btn {
+        background: transparent !important;
+        color: #00954b !important;
+        border: 1px solid #00954b !important;
+    }
+}

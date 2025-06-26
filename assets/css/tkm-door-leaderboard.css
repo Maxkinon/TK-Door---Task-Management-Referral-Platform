@@ -1,0 +1,723 @@
+/* TKM Door Leaderboard - Modern Styles */
+/* Prefix: tkm for all classes */
+
+:root {
+    --tkm-primary: #00954b;
+    --tkm-primary-light: #10b981;
+    --tkm-primary-dark: #047857;
+    --tkm-gold: #ffd700;
+    --tkm-silver: #c0c0c0;
+    --tkm-bronze: #cd7f32;
+    --tkm-success: #10b981;
+    --tkm-warning: #f59e0b;
+    --tkm-error: #ef4444;
+    --tkm-gray-50: #f9fafb;
+    --tkm-gray-100: #f3f4f6;
+    --tkm-gray-200: #e5e7eb;
+    --tkm-gray-300: #d1d5db;
+    --tkm-gray-400: #9ca3af;
+    --tkm-gray-500: #6b7280;
+    --tkm-gray-600: #4b5563;
+    --tkm-gray-700: #374151;
+    --tkm-gray-800: #1f2937;
+    --tkm-gray-900: #111827;
+    --tkm-white: #ffffff;
+    --tkm-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --tkm-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --tkm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --tkm-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --tkm-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Reset and Base Styles */
+.tkm-door-leaderboard * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.tkm-door-leaderboard {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--tkm-gray-50);
+    color: var(--tkm-gray-900);
+    line-height: 1.6;
+    font-size: 16px;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.tkm-leaderboard-container {
+    min-height: 100vh;
+    display: flex;
+    background: var(--tkm-gray-50);
+}
+
+.tkm-leaderboard-content {
+    flex: 1;
+    padding: 2rem;
+    margin-left: 260px;
+    transition: margin-left 0.3s ease;
+}
+
+/* Header Section */
+.tkm-leaderboard-header {
+    background: linear-gradient(135deg, var(--tkm-primary), var(--tkm-primary-light));
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.tkm-leaderboard-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.tkm-header-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Filters Section */
+.tkm-filters-section {
+    background: var(--tkm-white);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--tkm-shadow);
+}
+
+.tkm-filters-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tkm-search-box {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.tkm-search-box input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 2px solid var(--tkm-gray-200);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.tkm-search-box input:focus {
+    outline: none;
+    border-color: var(--tkm-primary);
+}
+
+.tkm-search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--tkm-gray-400);
+}
+
+.tkm-filter-group {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.tkm-filter-group select {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--tkm-gray-200);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.tkm-filter-group select:focus {
+    outline: none;
+    border-color: var(--tkm-primary);
+}
+
+/* Main Content Layout */
+.tkm-leaderboard-main {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+}
+
+/* Leaderboard Panel */
+.tkm-leaderboard-panel {
+    background: var(--tkm-white);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: var(--tkm-shadow);
+}
+
+/* Podium Section */
+.tkm-podium-section {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--tkm-gray-50), var(--tkm-white));
+    border-bottom: 1px solid var(--tkm-gray-200);
+}
+
+.tkm-podium-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--tkm-gray-800);
+}
+
+.tkm-podium {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tkm-podium-item {
+    text-align: center;
+    position: relative;
+}
+
+.tkm-podium-item.first {
+    order: 2;
+    margin-top: -1rem;
+}
+
+.tkm-podium-item.second {
+    order: 1;
+}
+
+.tkm-podium-item.third {
+    order: 3;
+}
+
+.tkm-podium-rank {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0 auto 0.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+.tkm-podium-item.first .tkm-podium-rank {
+    background: var(--tkm-gold);
+    color: white;
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+
+.tkm-podium-item.second .tkm-podium-rank {
+    background: var(--tkm-silver);
+    color: white;
+}
+
+.tkm-podium-item.third .tkm-podium-rank {
+    background: var(--tkm-bronze);
+    color: white;
+}
+
+.tkm-podium-avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    margin: 0 auto 0.5rem;
+    border: 3px solid var(--tkm-white);
+    box-shadow: var(--tkm-shadow);
+}
+
+.tkm-podium-item.first .tkm-podium-avatar {
+    width: 5rem;
+    height: 5rem;
+    border-color: var(--tkm-gold);
+}
+
+.tkm-podium-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+}
+
+.tkm-podium-level {
+    font-size: 0.8rem;
+    color: var(--tkm-gray-600);
+    margin-bottom: 0.25rem;
+}
+
+.tkm-podium-points {
+    font-weight: bold;
+    color: var(--tkm-primary);
+    font-size: 0.9rem;
+}
+
+/* Leaderboard List */
+.tkm-leaderboard-list {
+    padding: 1.5rem;
+}
+
+.tkm-leaderboard-list h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--tkm-gray-800);
+}
+
+.tkm-list-header {
+    display: grid;
+    grid-template-columns: 60px 1fr 80px 100px 80px;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--tkm-gray-50);
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--tkm-gray-700);
+    margin-bottom: 0.5rem;
+}
+
+.tkm-list-content {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.tkm-leaderboard-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 80px 100px 80px;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s;
+    cursor: pointer;
+    align-items: center;
+}
+
+.tkm-leaderboard-row:hover {
+    background: var(--tkm-gray-50);
+}
+
+.tkm-leaderboard-row.current-user {
+    background: linear-gradient(135deg, rgba(0, 149, 75, 0.1), rgba(16, 185, 129, 0.1));
+    border: 1px solid var(--tkm-primary);
+}
+
+.tkm-rank {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--tkm-gray-700);
+}
+
+.tkm-rank.top-rank {
+    color: var(--tkm-primary);
+}
+
+.tkm-user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tkm-user-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 2px solid var(--tkm-gray-200);
+}
+
+.tkm-user-details {
+    flex: 1;
+}
+
+.tkm-user-name {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+
+.tkm-user-username {
+    font-size: 0.8rem;
+    color: var(--tkm-gray-600);
+}
+
+.tkm-level-badge {
+    background: var(--tkm-primary);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tkm-points {
+    font-weight: bold;
+    color: var(--tkm-gray-900);
+}
+
+.tkm-points-change {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tkm-points-change.positive {
+    color: var(--tkm-success);
+}
+
+.tkm-points-change.negative {
+    color: var(--tkm-error);
+}
+
+.tkm-points-change.neutral {
+    color: var(--tkm-gray-500);
+}
+
+/* Profile Panel */
+.tkm-profile-panel {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+}
+
+.tkm-profile-card {
+    background: var(--tkm-white);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: var(--tkm-shadow);
+}
+
+.tkm-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--tkm-gray-200);
+}
+
+.tkm-profile-avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 3px solid var(--tkm-primary);
+}
+
+.tkm-profile-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.tkm-profile-level {
+    font-size: 0.9rem;
+    color: var(--tkm-gray-600);
+    margin-bottom: 0.5rem;
+}
+
+.tkm-profile-stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.tkm-star {
+    opacity: 0.3;
+    transition: opacity 0.2s;
+}
+
+.tkm-star.active {
+    opacity: 1;
+}
+
+.tkm-profile-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tkm-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: white;
+}
+
+.tkm-achievements-section h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--tkm-gray-800);
+}
+
+.tkm-achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.tkm-achievement-card {
+    background: var(--tkm-gray-50);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.tkm-achievement-card.earned {
+    background: linear-gradient(135deg, var(--tkm-primary), var(--tkm-primary-light));
+    color: white;
+}
+
+.tkm-achievement-card.locked {
+    opacity: 0.5;
+}
+
+.tkm-achievement-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    display: block;
+}
+
+.tkm-achievement-name {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tkm-progress-section {
+    margin-bottom: 1.5rem;
+}
+
+.tkm-progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tkm-progress-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: var(--tkm-gray-200);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.tkm-progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, var(--tkm-primary), var(--tkm-primary-light));
+    transition: width 0.3s ease;
+}
+
+.tkm-more-achievements {
+    display: inline-block;
+    color: var(--tkm-primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.tkm-more-achievements:hover {
+    color: var(--tkm-primary-dark);
+}
+
+.tkm-user-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--tkm-gray-200);
+}
+
+.tkm-stat-item {
+    text-align: center;
+}
+
+.tkm-stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--tkm-primary);
+    margin-bottom: 0.25rem;
+}
+
+.tkm-stat-label {
+    font-size: 0.8rem;
+    color: var(--tkm-gray-600);
+}
+
+/* Loading and Messages */
+.tkm-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    color: white;
+}
+
+.tkm-loading-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: tkm-spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes tkm-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.tkm-message-container {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1001;
+}
+
+.tkm-message {
+    background: var(--tkm-white);
+    border-radius: 0.5rem;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0.5rem;
+    box-shadow: var(--tkm-shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    animation: tkm-slideIn 0.3s ease;
+}
+
+.tkm-message.success {
+    border-left: 4px solid var(--tkm-success);
+}
+
+.tkm-message.error {
+    border-left: 4px solid var(--tkm-error);
+}
+
+@keyframes tkm-slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .tkm-leaderboard-content {
+        margin-left: 0;
+        padding: 1rem;
+    }
+    
+    .tkm-leaderboard-main {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .tkm-profile-panel {
+        position: static;
+        order: -1;
+    }
+    
+    .tkm-filters-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .tkm-search-box {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .tkm-leaderboard-header h1 {
+        font-size: 2rem;
+    }
+    
+    .tkm-podium {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .tkm-podium-item {
+        order: unset !important;
+        margin-top: 0 !important;
+    }
+    
+    .tkm-list-header,
+    .tkm-leaderboard-row {
+        grid-template-columns: 50px 1fr 70px;
+        gap: 0.5rem;
+    }
+    
+    .tkm-list-header span:nth-child(4),
+    .tkm-list-header span:nth-child(5),
+    .tkm-leaderboard-row > *:nth-child(4),
+    .tkm-leaderboard-row > *:nth-child(5) {
+        display: none;
+    }
+    
+    .tkm-user-stats {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+    
+    .tkm-achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .tkm-leaderboard-content {
+        padding: 0.75rem;
+    }
+    
+    .tkm-leaderboard-header {
+        padding: 1.5rem;
+    }
+    
+    .tkm-filters-section {
+        padding: 1rem;
+    }
+    
+    .tkm-profile-card {
+        padding: 1rem;
+    }
+    
+    .tkm-profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+}

@@ -1,0 +1,750 @@
+/**
+ * Indoor Tasks Plugin - Withdraw Styles
+ * Modern withdrawal interface with forms and history
+ */
+
+/* Withdraw Container */
+.tk-withdraw {
+    padding: var(--tk-spacing-xl);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tk-withdraw-header {
+    margin-bottom: var(--tk-spacing-xl);
+}
+
+.tk-withdraw-title {
+    font-size: var(--tk-font-2xl);
+    font-weight: 700;
+    color: var(--tk-text-primary);
+    margin-bottom: var(--tk-spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-sm);
+}
+
+.tk-withdraw-subtitle {
+    color: var(--tk-text-secondary);
+    font-size: var(--tk-font-base);
+}
+
+/* Balance Overview */
+.tk-balance-overview {
+    margin-bottom: var(--tk-spacing-xl);
+}
+
+.tk-balance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--tk-spacing-lg);
+}
+
+.tk-balance-card {
+    background: var(--tk-white);
+    border-radius: var(--tk-border-radius-lg);
+    padding: var(--tk-spacing-xl);
+    box-shadow: var(--tk-shadow);
+    border: 1px solid var(--tk-border);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tk-balance-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--tk-shadow-lg);
+}
+
+.tk-balance-card.available {
+    border-left: 4px solid var(--tk-success);
+}
+
+.tk-balance-card.processing {
+    border-left: 4px solid var(--tk-warning);
+}
+
+.tk-balance-card.completed {
+    border-left: 4px solid var(--tk-info);
+}
+
+.tk-balance-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--tk-spacing-lg);
+}
+
+.tk-balance-label {
+    font-size: var(--tk-font-sm);
+    font-weight: 600;
+    color: var(--tk-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tk-balance-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--tk-primary);
+}
+
+.tk-balance-card.available .tk-balance-icon {
+    color: var(--tk-success);
+}
+
+.tk-balance-card.processing .tk-balance-icon {
+    color: var(--tk-warning);
+}
+
+.tk-balance-card.completed .tk-balance-icon {
+    color: var(--tk-info);
+}
+
+.tk-balance-amount {
+    font-size: var(--tk-font-2xl);
+    font-weight: 700;
+    color: var(--tk-text-primary);
+    margin-bottom: var(--tk-spacing-sm);
+}
+
+.tk-balance-note {
+    font-size: var(--tk-font-sm);
+    color: var(--tk-text-secondary);
+}
+
+/* Withdraw Content Grid */
+.tk-withdraw-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--tk-spacing-xl);
+}
+
+/* Withdrawal Form Section */
+.tk-withdrawal-form-section {
+    background: var(--tk-white);
+    border-radius: var(--tk-border-radius-lg);
+    padding: var(--tk-spacing-xl);
+    box-shadow: var(--tk-shadow);
+    border: 1px solid var(--tk-border);
+    height: fit-content;
+}
+
+.tk-form-header {
+    margin-bottom: var(--tk-spacing-xl);
+    padding-bottom: var(--tk-spacing-lg);
+    border-bottom: 1px solid var(--tk-border-light);
+}
+
+.tk-form-title {
+    font-size: var(--tk-font-xl);
+    font-weight: 600;
+    color: var(--tk-text-primary);
+    margin-bottom: var(--tk-spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-sm);
+}
+
+.tk-form-subtitle {
+    color: var(--tk-text-secondary);
+    margin: 0;
+}
+
+/* Withdrawal Methods Grid */
+.tk-method-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--tk-spacing-md);
+    margin-bottom: var(--tk-spacing-lg);
+}
+
+.tk-method-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: var(--tk-border-radius-lg);
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.tk-method-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.tk-method-content {
+    background: var(--tk-bg-light);
+    border: 2px solid var(--tk-border);
+    border-radius: var(--tk-border-radius-lg);
+    padding: var(--tk-spacing-lg);
+    transition: all 0.2s ease;
+}
+
+.tk-method-card:hover .tk-method-content {
+    border-color: var(--tk-primary);
+    background: rgba(0, 149, 75, 0.05);
+}
+
+.tk-method-card input:checked + .tk-method-content {
+    border-color: var(--tk-primary);
+    background: rgba(0, 149, 75, 0.1);
+    box-shadow: 0 0 0 3px rgba(0, 149, 75, 0.1);
+}
+
+.tk-method-header {
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-md);
+    margin-bottom: var(--tk-spacing-md);
+}
+
+.tk-method-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--tk-primary);
+    flex-shrink: 0;
+}
+
+.tk-method-name {
+    font-size: var(--tk-font-base);
+    font-weight: 600;
+    color: var(--tk-text-primary);
+    margin: 0;
+}
+
+.tk-method-details {
+    display: grid;
+    gap: var(--tk-spacing-xs);
+}
+
+.tk-method-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--tk-font-sm);
+}
+
+.tk-method-key {
+    color: var(--tk-text-secondary);
+}
+
+.tk-method-value {
+    color: var(--tk-text-primary);
+    font-weight: 500;
+}
+
+/* Amount Input */
+.tk-amount-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.tk-currency-symbol {
+    position: absolute;
+    left: var(--tk-spacing-md);
+    color: var(--tk-text-secondary);
+    font-weight: 600;
+    z-index: 1;
+}
+
+.tk-amount-input {
+    padding-left: calc(var(--tk-spacing-md) + 20px);
+    padding-right: 60px;
+    font-size: var(--tk-font-lg);
+    font-weight: 600;
+    text-align: right;
+}
+
+.tk-max-btn {
+    position: absolute;
+    right: var(--tk-spacing-sm);
+    background: var(--tk-primary);
+    color: white;
+    border: none;
+    padding: var(--tk-spacing-xs) var(--tk-spacing-sm);
+    border-radius: var(--tk-border-radius);
+    font-size: var(--tk-font-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tk-max-btn:hover {
+    background: var(--tk-primary-dark);
+    transform: scale(1.05);
+}
+
+.tk-amount-info {
+    margin-top: var(--tk-spacing-sm);
+    padding: var(--tk-spacing-sm);
+    background: var(--tk-bg-light);
+    border-radius: var(--tk-border-radius);
+    font-size: var(--tk-font-sm);
+}
+
+.tk-amount-range {
+    color: var(--tk-text-secondary);
+    margin-bottom: var(--tk-spacing-xs);
+}
+
+.tk-fee-info {
+    color: var(--tk-text-primary);
+    font-weight: 500;
+}
+
+#fee-amount {
+    color: var(--tk-warning);
+}
+
+#net-amount {
+    color: var(--tk-success);
+    font-weight: 600;
+}
+
+/* Form Actions */
+.tk-form-actions {
+    margin-top: var(--tk-spacing-xl);
+    padding-top: var(--tk-spacing-lg);
+    border-top: 1px solid var(--tk-border-light);
+}
+
+.tk-btn-large {
+    width: 100%;
+    padding: var(--tk-spacing-lg);
+    font-size: var(--tk-font-base);
+    font-weight: 600;
+    justify-content: center;
+}
+
+/* Insufficient Balance */
+.tk-insufficient-balance {
+    text-align: center;
+    padding: var(--tk-spacing-2xl);
+    color: var(--tk-text-secondary);
+}
+
+.tk-insufficient-icon {
+    width: 64px;
+    height: 64px;
+    color: var(--tk-danger);
+    margin: 0 auto var(--tk-spacing-lg);
+}
+
+.tk-insufficient-balance h3 {
+    font-size: var(--tk-font-lg);
+    font-weight: 600;
+    color: var(--tk-text-primary);
+    margin-bottom: var(--tk-spacing-sm);
+}
+
+.tk-insufficient-balance p {
+    margin-bottom: var(--tk-spacing-lg);
+}
+
+/* Withdrawal History */
+.tk-withdrawal-history {
+    background: var(--tk-white);
+    border-radius: var(--tk-border-radius-lg);
+    padding: var(--tk-spacing-xl);
+    box-shadow: var(--tk-shadow);
+    border: 1px solid var(--tk-border);
+}
+
+.tk-history-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--tk-spacing-lg);
+    padding-bottom: var(--tk-spacing-lg);
+    border-bottom: 1px solid var(--tk-border-light);
+}
+
+.tk-history-title {
+    font-size: var(--tk-font-xl);
+    font-weight: 600;
+    color: var(--tk-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-sm);
+    margin: 0;
+}
+
+.tk-history-actions {
+    display: flex;
+    gap: var(--tk-spacing-sm);
+    align-items: center;
+}
+
+.tk-filter-select {
+    padding: var(--tk-spacing-sm) var(--tk-spacing-md);
+    border: 1px solid var(--tk-border);
+    border-radius: var(--tk-border-radius);
+    font-size: var(--tk-font-sm);
+    background: var(--tk-white);
+    color: var(--tk-text-primary);
+    min-width: 120px;
+}
+
+/* History Table */
+.tk-history-table-wrapper {
+    overflow-x: auto;
+    margin-bottom: var(--tk-spacing-lg);
+}
+
+.tk-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--tk-font-sm);
+}
+
+.tk-history-table th {
+    text-align: left;
+    padding: var(--tk-spacing-md);
+    font-weight: 600;
+    color: var(--tk-text-primary);
+    background: var(--tk-bg-light);
+    border-bottom: 2px solid var(--tk-border);
+}
+
+.tk-history-table td {
+    padding: var(--tk-spacing-md);
+    border-bottom: 1px solid var(--tk-border-light);
+    vertical-align: middle;
+}
+
+.tk-history-table tbody tr:hover {
+    background: var(--tk-bg-light);
+}
+
+.tk-request-id {
+    font-family: var(--tk-font-mono);
+    font-weight: 600;
+    color: var(--tk-primary);
+}
+
+.tk-method-display {
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-xs);
+}
+
+.tk-method-small-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--tk-primary);
+}
+
+.tk-amount,
+.tk-fee,
+.tk-net-amount {
+    font-weight: 600;
+}
+
+.tk-net-amount {
+    color: var(--tk-success);
+}
+
+/* Status Badges */
+.tk-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tk-spacing-xs);
+    padding: var(--tk-spacing-xs) var(--tk-spacing-sm);
+    border-radius: var(--tk-border-radius);
+    font-size: var(--tk-font-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.tk-status-pending {
+    background: rgba(255, 193, 7, 0.1);
+    color: var(--tk-warning);
+    border: 1px solid rgba(255, 193, 7, 0.2);
+}
+
+.tk-status-processing {
+    background: rgba(52, 152, 219, 0.1);
+    color: var(--tk-info);
+    border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.tk-status-completed {
+    background: rgba(0, 149, 75, 0.1);
+    color: var(--tk-success);
+    border: 1px solid rgba(0, 149, 75, 0.2);
+}
+
+.tk-status-cancelled {
+    background: rgba(255, 99, 71, 0.1);
+    color: var(--tk-danger);
+    border: 1px solid rgba(255, 99, 71, 0.2);
+}
+
+.tk-date {
+    font-weight: 500;
+    display: block;
+}
+
+.tk-time {
+    font-size: var(--tk-font-xs);
+    color: var(--tk-text-secondary);
+}
+
+/* Actions */
+.tk-actions {
+    display: flex;
+    gap: var(--tk-spacing-xs);
+}
+
+.tk-btn-small {
+    padding: var(--tk-spacing-xs) var(--tk-spacing-sm);
+    font-size: var(--tk-font-xs);
+    white-space: nowrap;
+}
+
+/* Pagination */
+.tk-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--tk-spacing-sm);
+}
+
+.tk-pagination-btn {
+    padding: var(--tk-spacing-sm) var(--tk-spacing-md);
+    background: var(--tk-white);
+    border: 1px solid var(--tk-border);
+    border-radius: var(--tk-border-radius);
+    font-size: var(--tk-font-sm);
+    color: var(--tk-text-primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tk-pagination-btn:hover:not(.disabled) {
+    background: var(--tk-primary);
+    color: white;
+    border-color: var(--tk-primary);
+}
+
+.tk-pagination-btn.active {
+    background: var(--tk-primary);
+    color: white;
+    border-color: var(--tk-primary);
+}
+
+.tk-pagination-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tk-pagination-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Empty State */
+.tk-empty-state {
+    text-align: center;
+    padding: var(--tk-spacing-2xl);
+    color: var(--tk-text-secondary);
+}
+
+.tk-empty-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--tk-spacing-lg);
+    opacity: 0.5;
+}
+
+.tk-empty-title {
+    font-size: var(--tk-font-lg);
+    font-weight: 600;
+    color: var(--tk-text-primary);
+    margin-bottom: var(--tk-spacing-sm);
+}
+
+.tk-empty-text {
+    font-size: var(--tk-font-base);
+    margin-bottom: var(--tk-spacing-lg);
+}
+
+/* Field Notes */
+.tk-field-note {
+    font-size: var(--tk-font-xs);
+    color: var(--tk-text-secondary);
+    margin-top: var(--tk-spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-xs);
+}
+
+.tk-field-note::before {
+    content: 'ℹ';
+    color: var(--tk-info);
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tk-withdraw {
+        padding: var(--tk-spacing-md);
+    }
+    
+    .tk-balance-grid {
+        grid-template-columns: 1fr;
+        gap: var(--tk-spacing-md);
+    }
+    
+    .tk-withdraw-content {
+        grid-template-columns: 1fr;
+        gap: var(--tk-spacing-lg);
+    }
+    
+    .tk-method-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tk-history-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--tk-spacing-md);
+    }
+    
+    .tk-history-actions {
+        justify-content: stretch;
+    }
+    
+    .tk-filter-select {
+        flex: 1;
+    }
+    
+    /* Stack table on mobile */
+    .tk-history-table,
+    .tk-history-table thead,
+    .tk-history-table tbody,
+    .tk-history-table th,
+    .tk-history-table td,
+    .tk-history-table tr {
+        display: block;
+    }
+    
+    .tk-history-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    .tk-history-table tr {
+        border: 1px solid var(--tk-border);
+        border-radius: var(--tk-border-radius);
+        margin-bottom: var(--tk-spacing-md);
+        padding: var(--tk-spacing-md);
+        background: var(--tk-white);
+    }
+    
+    .tk-history-table td {
+        border: none;
+        padding: var(--tk-spacing-xs) 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .tk-history-table td:before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: var(--tk-text-primary);
+    }
+    
+    .tk-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .tk-btn-small {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .tk-balance-card {
+        padding: var(--tk-spacing-lg);
+    }
+    
+    .tk-balance-amount {
+        font-size: var(--tk-font-xl);
+    }
+    
+    .tk-withdrawal-form-section,
+    .tk-withdrawal-history {
+        padding: var(--tk-spacing-lg);
+    }
+    
+    .tk-pagination {
+        flex-wrap: wrap;
+    }
+}
+
+/* Loading States */
+.tk-loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.tk-loading .tk-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    margin: -8px 0 0 -8px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    animation: tk-spin 1s linear infinite;
+}
+
+@keyframes tk-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form Validation */
+.tk-form-group.error .tk-form-input,
+.tk-form-group.error .tk-form-textarea {
+    border-color: var(--tk-danger);
+    box-shadow: 0 0 0 3px rgba(255, 99, 71, 0.1);
+}
+
+.tk-error-message {
+    color: var(--tk-danger);
+    font-size: var(--tk-font-xs);
+    margin-top: var(--tk-spacing-xs);
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-xs);
+}
+
+/* Success States */
+.tk-success-message {
+    background: rgba(0, 149, 75, 0.1);
+    border: 1px solid rgba(0, 149, 75, 0.2);
+    color: var(--tk-success);
+    padding: var(--tk-spacing-md);
+    border-radius: var(--tk-border-radius);
+    margin-bottom: var(--tk-spacing-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--tk-spacing-sm);
+}

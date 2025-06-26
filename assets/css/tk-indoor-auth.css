@@ -1,0 +1,731 @@
+/* Indoor Tasks Authentication Styles */
+
+/* Reset and Base Styles */
+body.tk-auth-page {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', Arial, sans-serif;
+    background: #f8fafc;
+    color: #333;
+    line-height: 1.5;
+    min-height: 100vh;
+}
+
+/* Auth Container Layout */
+.tk-auth-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: #fff;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.tk-auth-content {
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+.tk-auth-inner {
+    width: 100%;
+    max-width: 480px;
+    padding: 40px 20px;
+}
+
+/* Auth Image Section */
+.tk-auth-image {
+    width: 45%;
+    background: linear-gradient(135deg, #00954b 0%, #007a3d 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.tk-auth-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../images/pattern.svg') center/cover;
+    opacity: 0.1;
+}
+
+.tk-auth-image-content {
+    position: relative;
+    color: white;
+    text-align: left;
+    max-width: 400px;
+    padding: 40px;
+    z-index: 1;
+}
+
+.tk-auth-image-content h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.tk-auth-image-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Auth Card Styling */
+.tk-auth-card {
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.tk-auth-card.hiding {
+    opacity: 0;
+}
+
+.tk-auth-logo {
+    height: auto;
+    width: 90px;
+    margin-bottom: 0px;
+}
+
+.tk-auth-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.tk-auth-subtitle {
+    color: #64748b;
+    font-size: 16px;
+    margin: 0 0 24px;
+}
+
+/* Form Styling */
+.tk-auth-form {
+    margin-bottom: 24px;
+}
+
+.tk-form-group {
+    margin-bottom: 20px;
+}
+
+.tk-form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #475569;
+}
+
+.tk-form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #1e293b;
+    background: #fff;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.tk-form-group input:focus {
+    outline: none;
+    border-color: #2ecc71;
+    box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
+}
+
+.tk-form-group input::placeholder {
+    color: #94a3b8;
+}
+
+/* Enhanced Form Field Styles */
+.tk-form-group input[type="text"],
+.tk-form-group input[type="email"],
+.tk-form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #3c4043;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.tk-form-group input[type="text"]:hover,
+.tk-form-group input[type="email"]:hover,
+.tk-form-group input[type="password"]:hover {
+    border-color: #00954b;
+    box-shadow: 0 2px 4px rgba(0, 149, 75, 0.1);
+}
+
+.tk-form-group input[type="text"]:focus,
+.tk-form-group input[type="email"]:focus,
+.tk-form-group input[type="password"]:focus {
+    border-color: #00954b;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 149, 75, 0.15);
+}
+
+/* Password Field */
+.tk-password-field {
+    position: relative;
+}
+
+.tk-password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.tk-password-toggle::before {
+    content: '👁';
+}
+
+.tk-password-toggle.visible::before {
+    opacity: 0.7;
+}
+
+/* Password Strength */
+.tk-password-strength {
+    height: 4px;
+    background: #e2e8f0;
+    border-radius: 2px;
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.tk-password-strength-bar {
+    height: 100%;
+    width: 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.tk-password-strength-bar.weak { width: 33.33%; background: #ef4444; }
+.tk-password-strength-bar.medium { width: 66.66%; background: #f59e0b; }
+.tk-password-strength-bar.strong { width: 100%; background: #10b981; }
+
+/* Email Domain Validation Feedback */
+.tk-email-feedback {
+    font-size: 12px;
+    margin-top: 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+.tk-email-feedback.valid {
+    display: block;
+    color: #059669;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.tk-email-feedback.invalid {
+    display: block;
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+/* Buttons */
+.tk-auth-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.tk-auth-btn:hover {
+    background: #27ae60;
+    transform: translateY(-1px);
+}
+
+.tk-auth-btn:active {
+    transform: translateY(0);
+}
+
+.tk-auth-btn.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.tk-auth-btn.loading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: tk-spin 0.8s linear infinite;
+}
+
+/* Submit button enhancement */
+.tk-auth-btn {
+    background: #00954b;
+    color: #fff;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 149, 75, 0.15);
+}
+
+.tk-auth-btn:hover {
+    background: #007a3d;
+    box-shadow: 0 2px 4px rgba(0, 149, 75, 0.2);
+}
+
+.tk-auth-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 2px rgba(0, 149, 75, 0.15);
+}
+
+/* Google Button Styles */
+.tk-google-btn,
+button#google-register-btn,
+button#google-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 9px 16px;
+    background: #ffffff;
+    border: 1px solid #dbd2d2;
+    border-radius: 7px;
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: relative;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.tk-google-btn:hover,
+button#google-register-btn:hover,
+button#google-login-btn:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    border-color: #c6c6c6;
+}
+
+.tk-google-btn:active,
+button#google-register-btn:active,
+button#google-login-btn:active {
+    background-color: #f1f3f4;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    transform: translateY(1px);
+}
+
+.tk-google-btn img,
+button#google-register-btn img,
+button#google-login-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* OTP Button Styles */
+.tk-otp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 9px 16px;
+    background: #ffffff;
+    border: 1px solid #dbd2d2;
+    border-radius: 7px;
+    color: #3c4043;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    position: relative;
+    gap: 8px;
+    margin: 8px 0;
+}
+
+.tk-otp-btn:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+    border-color: #c6c6c6;
+}
+
+.tk-otp-btn:active {
+    background-color: #f1f3f4;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    transform: translateY(1px);
+}
+
+.tk-otp-btn img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* OTP Form Specific Styles */
+.tk-otp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.tk-auth-secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 20px;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tk-auth-secondary-btn:hover {
+    background: #f9fafb;
+    border-color: #9ca3af;
+    color: #374151;
+}
+
+.tk-auth-secondary-btn:active {
+    transform: translateY(1px);
+}
+
+/* OTP Input Styling */
+#otp-code {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    padding: 16px 12px;
+}
+
+/* OTP Success/Error Messages */
+#tk-otp-verify-card .tk-form-message,
+#tk-otp-register-card .tk-form-message {
+    margin-bottom: 20px;
+}
+
+/* Referral System Styles */
+.tk-referral-applied {
+    border-left: 4px solid #00954b;
+    background: #f0f9f4;
+    padding-left: 12px;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+}
+
+.tk-referral-applied::before {
+    content: "🎯";
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 12px;
+}
+
+.tk-referral-applied label {
+    color: #00954b;
+    font-weight: 600;
+}
+
+.tk-referral-applied input {
+    background: #ffffff;
+    border-color: #00954b;
+    color: #00954b;
+    font-weight: 600;
+}
+
+.tk-referral-applied input[readonly] {
+    cursor: default;
+}
+
+/* Enhanced Referral System Styles */
+.tk-referral-message {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 149, 75, 0.15);
+}
+
+.tk-referral-notification {
+    background: linear-gradient(135deg, #00954b 0%, #007a3d 100%);
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+}
+
+.tk-referral-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.tk-referral-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tk-referral-close {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s ease;
+}
+
+.tk-referral-close:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Animations */
+@keyframes tk-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .tk-auth-content {
+        width: 60%;
+    }
+    
+    .tk-auth-image {
+        width: 40%;
+    }
+    
+    .tk-auth-image-content {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .tk-auth-container {
+        flex-direction: column-reverse;
+    }
+
+    .tk-auth-content,
+    .tk-auth-image {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .tk-auth-image {
+        height: 200px;
+    }
+
+    .tk-auth-inner {
+        padding: 30px 20px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .tk-auth-container {
+        flex-direction: column-reverse;
+    }
+    
+    .tk-auth-content,
+    .tk-auth-image {
+        width: 100%;
+    }
+    
+    .tk-auth-content {
+        padding: 40px 20px;
+    }
+    
+    .tk-auth-image {
+        height: 240px;
+    }
+    
+    .tk-auth-image-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .tk-auth-image-content h2 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+    
+    .tk-auth-image-content p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tk-auth-container {
+        min-height: 100vh;
+    }
+
+    .tk-auth-content {
+        padding: 20px;
+    }
+
+    .tk-auth-card {
+        padding: 20px;
+    }
+
+    .tk-auth-title {
+        font-size: 24px;
+    }
+
+    .tk-auth-subtitle {
+        font-size: 14px;
+    }
+
+    .tk-form-group {
+        margin-bottom: 16px;
+    }
+
+    .tk-auth-btn,
+    .tk-google-btn {
+        padding: 10px 20px;
+    }
+
+    .tk-divider {
+        margin: 20px 0;
+    }
+
+    .tk-divider::before,
+    .tk-divider::after {
+        width: calc(50% - 40px);
+    }
+
+    .tk-auth-image {
+        height: 150px;
+    }
+
+    .tk-auth-image-content {
+        padding: 20px;
+    }
+
+    .tk-auth-image-content h2 {
+        font-size: 20px;
+    }
+
+    .tk-auth-image-content p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tk-auth-content {
+        padding: 30px 16px;
+    }
+    
+    .tk-auth-inner {
+        padding: 0;
+    }
+    
+    .tk-auth-image {
+        height: 200px;
+    }
+    
+    .tk-auth-logo {
+        width: 140px;
+        margin-bottom: 30px;
+    }
+    
+    .tk-auth-title {
+        font-size: 24px;
+    }
+    
+    .tk-auth-subtitle {
+        font-size: 14px;
+    }
+    
+    .tk-form-group input {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+    
+    .tk-auth-btn {
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .tk-auth-inner {
+        padding: 20px 15px;
+    }
+
+    .tk-auth-card {
+        padding: 15px;
+    }
+
+    .tk-auth-logo {
+        max-width: 120px;
+        margin-bottom: 20px;
+    }
+
+    .tk-form-group input,
+    .tk-form-group select {
+        font-size: 14px;
+        padding: 10px 14px;
+    }
+
+    .tk-password-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    .tk-forgot-link {
+        font-size: 13px;
+    }
+}

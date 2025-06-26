@@ -1,0 +1,29 @@
+/* Tab fix for settings page */
+.indoor-tasks-settings-tabs:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.indoor-tasks-settings-section {
+    margin-top: 20px;
+}
+
+/* Explicitly set z-index for proper tab display */
+.indoor-tasks-tab-button {
+    position: relative;
+    z-index: 5;
+}
+
+.indoor-tasks-tab-button.active {
+    z-index: 10;
+}
+
+/* Improve tab loading */
+body.admin-loaded .indoor-tasks-settings-section:not(.active) {
+    display: none !important;
+}
+
+body.admin-loaded .indoor-tasks-settings-section.active {
+    display: block !important;
+}
