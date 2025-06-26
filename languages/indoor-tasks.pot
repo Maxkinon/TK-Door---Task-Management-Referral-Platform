@@ -1,0 +1,52 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Indoor Tasks 1.0.0\n"
+"POT-Creation-Date: 2025-06-07\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: indoor-tasks.php
+msgid "Indoor Tasks"
+msgstr ""
+
+#: templates/dashboard.php
+msgid "Dashboard"
+msgstr ""
+
+#: templates/task-list.php
+msgid "Available Tasks"
+msgstr ""
+
+#: templates/task-detail.php
+msgid "Task Details"
+msgstr ""
+
+#: templates/task-submit.php
+msgid "Submit Proof"
+msgstr ""
+
+#: templates/wallet.php
+msgid "Wallet"
+msgstr ""
+
+#: templates/withdrawal.php
+msgid "Withdraw Points"
+msgstr ""
+
+#: templates/withdrawal-history.php
+msgid "Withdrawal History"
+msgstr ""
+
+#: templates/kyc.php
+msgid "KYC Verification"
+msgstr ""
+
+#: templates/notifications.php
+msgid "Notifications"
+msgstr ""
+
+#: templates/login.php
+msgid "Login / Register"
+msgstr ""
